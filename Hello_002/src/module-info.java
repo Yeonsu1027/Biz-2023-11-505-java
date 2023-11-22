@@ -1,0 +1,2 @@
+module Hello_002 {
+}
