@@ -33,7 +33,20 @@ public class AlgF {
 		System.out.println("======================");
 	
 		
+		//------------------------------------------
+		System.out.println(pay/50000);
+		pay = pay % 50000;
+		System.out.println(pay/10000);
+		pay=pay%10000;
+		System.out.println(pay/5000);
+		pay=pay%5000;
+		System.out.println(pay/1000);
 		
+		//------------------------------------------------
+		
+		pay = 3587960;
+		
+
 		
 	}
 
