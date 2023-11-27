@@ -10,11 +10,10 @@ public class PrimeGa {
 			for (index = 2; index < num + 1; index++) {
 				if (num + 1 % index == 0) {
 					break;
-				}//if
+				} // if
 
-			}//for
-			
+			} // for
+
 		}
 	}
-
 }

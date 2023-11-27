@@ -13,9 +13,9 @@ public class PrimeCa {
 				// prime이 아니다
 				noPrime = true;
 				break;
-			}
+			}//if
 				
-		}
+		}//for
 		if(noPrime) {
 			System.out.printf("%d MOD %d = %d, ",
 					num, index, num % index);
