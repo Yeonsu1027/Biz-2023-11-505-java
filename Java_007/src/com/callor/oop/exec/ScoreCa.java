@@ -1,6 +1,7 @@
 package com.callor.oop.exec;
 
 import com.callor.oop.service.ScoreService;
+import com.callor.oop.utils.Line;
 
 public class ScoreCa {
 	// ScoreService 클래스를 사용하여 scores 배열을 10개 "선언"
@@ -41,6 +42,26 @@ public class ScoreCa {
 			scores[i].scoreMath = scoreMath;
 
 		}
+		
+		//선생님거
+		
+		
+		// 배열에 저장된 점수 화면에 출력하기
+		// Line.title("성적표");
+		Line.title(100,"성적표"); //위아래 100개의 라인을 긋고 그안에 성적표 제목을 표시하라.
+		
+		System.out.println("국어\t영어\t수학\t총점\t평균");
+		Line.sLine(50);
+		for( i =0; i<scores.length;i++) {
+			System.out.printf("%3d\t",scores[i].scoreKor);
+			System.out.printf("%3d\t",scores[i].scoreEng);
+			System.out.printf("%3d\t",scores[i].scoreMath);
+			
+			System.out.printf("%3d\t",scores[i].getScoreTotal());
+			System.out.printf("%5.2f\t\n",scores[i].getScoreAvg());
+			
+		}
+		Line.sLine(50);
 		
 		
 	}
