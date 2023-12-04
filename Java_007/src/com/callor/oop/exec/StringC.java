@@ -38,6 +38,7 @@ public class StringC {
 		// Open 한 data.txt 파일에 대한 정보(연결)을 Scanner 와
 		// 연결 해주기
 		scan = new Scanner(is);
+		//------------
 		String students[] = new String[100];
 		
 		

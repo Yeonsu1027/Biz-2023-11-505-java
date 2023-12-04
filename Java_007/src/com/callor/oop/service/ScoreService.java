@@ -3,7 +3,7 @@ package com.callor.oop.service;
 public class ScoreService {
 
 	// 클래스 영역에 선언한 변수
-	public String stdName = null;
+	public String stdNum = null;
 
 	public int scoreKor = 0;
 	public int scoreEng = 0;
@@ -38,8 +38,8 @@ public class ScoreService {
 		scoreTotal += scoreMath;
 		return scoreTotal; // 결과 scoreTotal return
 
-		// 데이터와 처리기가 하나의 데이터로 묶여있다
 	}
+	// 데이터와 처리기가 하나의 데이터로 묶여있다
 
 	public float getScoreAvg() {
 		getScoreTotal(); //total값을 호출해두면 scoreB에서 avg를 먼저 호출해도 정상적으로 출력된다.

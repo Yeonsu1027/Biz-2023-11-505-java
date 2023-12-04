@@ -7,7 +7,7 @@
  */
 
 // 나의 첫번째 자바 파일
-package com;
+package com.callor.hello;
 
 public class HelloB {
 	
