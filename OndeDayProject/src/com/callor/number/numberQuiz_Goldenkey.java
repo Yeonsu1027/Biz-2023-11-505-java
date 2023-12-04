@@ -27,15 +27,17 @@ public class numberQuiz_Goldenkey {
 		//-------------------------------------
 
 		while (true) {
-			if (restart) {  //restar=false
-				System.out.println(" 황금열쇠 번호 입력 >>");
+			if (restart) {  //restart=false
+				System.out.println(" 황금열쇠 번호 입력 >>");  //다시시작하는부분을 false로 해두어서 RESTART를 입력하는 조건을 충족할때만..
 			}
 			String str = scan.nextLine(); // 사용자의 입력을 받음
+			
+			//------------------------------------재시작과 종료
 
 			if (str.equals("RESTART")) {
 				// 게임을 재시작할 때 변수 초기화
 				restart = true;
-				rnd = (int) (Math.random() * 50) + 1;
+				rnd = (int) (Math.random() * 50) + 1;  
 				sum = 0;
 				index = 1;
 				continue; // 재시작을 선택한 경우, 다음 루프로 이동하여 게임을 다시 시작
@@ -43,6 +45,8 @@ public class numberQuiz_Goldenkey {
 			} else if (str.equals("QUIT")) {
 				break; // 게임 종료를 선택한 경우, 반복문을 벗어나 게임을 종료
 			}
+			
+			//-------------------------------------------------
 
 			try {
 				num = Integer.valueOf(str);
