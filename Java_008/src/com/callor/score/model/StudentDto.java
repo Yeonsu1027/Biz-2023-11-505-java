@@ -35,16 +35,6 @@ public class StudentDto {
 	
 	
 	
-	public StudentDto(String dataFile) { 
-		InputStream is = null;
-		
-		try {
-			is = new FileInputStream(dataFile);
-		} catch (FileNotFoundException e) {
-			
-			e.printStackTrace();
-		}
-	}
 	
 	
 	
