@@ -32,16 +32,14 @@ public class ScoreServiceB {
 
 		try {
 			is = new FileInputStream(dataFile);
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		scan = new Scanner(is);
 
-		/*
-		 * Item(요소) 개수가 0인 상태의 List가 준비된다
-		 */
-
+		// Item(요소) 개수가 0인 상태의 List가 준비된다
 		scores = new ArrayList<>(); // 요소를 선언할 준비 해두기
 		// scores = new LinkedList<>(); //이 3개의 사용법은 같다
 		// scores = new Vector<>();
@@ -57,7 +55,7 @@ public class ScoreServiceB {
 			ScoreDto scoreDto = new ScoreDto();
 			try {
 				scoreDto.stdnum = lines[0];
-				
+
 				scoreDto.kor = Integer.valueOf(lines[1]);
 				scoreDto.eng = Integer.valueOf(lines[2]);
 				scoreDto.math = Integer.valueOf(lines[3]);
@@ -65,12 +63,12 @@ public class ScoreServiceB {
 				scoreDto.art = Integer.valueOf(lines[5]);
 				scoreDto.sw = Integer.valueOf(lines[6]);
 				scoreDto.db = Integer.valueOf(lines[7]);
-				
+
 			} catch (Exception e) {
 				System.out.println("데이터 읽는 중 오류 발생");
 				System.out.println(line);
 				break;
-				
+
 			}
 
 			// List type 의 데이터 목록에
@@ -92,15 +90,19 @@ public class ScoreServiceB {
 		System.out.println("학번\t국어\t영어\t수학\t총점\t평균");
 		Line.sLine(100);
 		for (int i = 0; i < scores.size(); i++) {
-			ScoreDto scoreDto = scores.get(i); //가진요소중에서 i번째 요소를 달라
-			
-			System.out.printf("%s\t",scoreDto.stdnum);
-			
-			System.out.printf("%3d\t",scoreDto.kor);
-			System.out.printf("%3d\t",scoreDto.eng);
-			System.out.printf("%3d\t",scoreDto.math);
-			System.out.printf("%3d\t",scoreDto.getTotal());
-			System.out.printf("%3d\t",scoreDto.getAvg());
+			ScoreDto scoreDto = scores.get(i); // 가진요소중에서 i번째 요소를 달라
+
+			System.out.printf("%s\t", scoreDto.stdnum);
+
+			System.out.printf("%3d\t", scoreDto.kor);
+			System.out.printf("%3d\t", scoreDto.eng);
+			System.out.printf("%3d\t", scoreDto.math);
+			System.out.printf("%3d\t",scoreDto.music);
+			System.out.printf("%3d\t",scoreDto.art);
+			System.out.printf("%3d\t",scoreDto.sw);
+			System.out.printf("%3d\t",scoreDto.db);
+			System.out.printf("%3d\t", scoreDto.getTotal());
+			System.out.printf("%3d\t", scoreDto.getAvg());
 
 		}
 
