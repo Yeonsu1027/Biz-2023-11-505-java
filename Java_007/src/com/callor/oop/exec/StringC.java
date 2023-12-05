@@ -7,6 +7,14 @@ import java.rmi.StubNotFoundException;
 import java.util.Scanner;
 
 public class StringC {
+	
+	public int score1 = 0;
+	public int score2 = 0;
+	public int score3 = 0;
+	public int score4 = 0;
+	public int score5 = 0;
+	public int score6 = 0;
+	public int score7 = 0;
 
 	public static void main(String[] args) {
 		
@@ -42,13 +50,28 @@ public class StringC {
 		String students[] = new String[100];
 		
 		
+		
+		
 		while(scan.hasNext()) {
 			
 			String line = scan.nextLine(); 
 			System.out.println(line);
 			
+			for ( int i = 1; i<students.length ; i++) {
+				
+				students[i].substring(6); //이걸나눠서 stu[i]score1~7에넣어야
+			}
+			//students[i].score1; 
+			
+			//students[i] = line.split(",");
 			
 		}
+		
+		
+		
+		
+		
+		
 		
 //int[] sums = new int[students.length]; //합계계산용
 //		
