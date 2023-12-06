@@ -1,5 +1,8 @@
 package com.blackjack;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 
 public class CardDeck {
@@ -20,6 +23,21 @@ public class CardDeck {
 		int rndNum2 = (int)(Math.random()*13)+1;
 		int rndNum4 = (int)(Math.random()*13)+1;
 		int rndNum5 = (int)(Math.random()*13)+1;
+	}
+	
+	public static void main(String[] args) {
+		
+		String data = "src/com/blackjack/pattern.txt";
+		InputStream deck =null;
+		try {
+			deck = new FileInputStream(data);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 	
 	
