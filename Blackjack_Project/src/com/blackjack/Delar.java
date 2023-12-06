@@ -1,5 +1,5 @@
 package com.blackjack;
 
-public class Blackjack {
+public class Delar {
 
 }
