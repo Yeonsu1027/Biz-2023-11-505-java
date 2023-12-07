@@ -1,4 +1,4 @@
-package com.callor.score.util;
+package com.callor.score.utils;
 
 public class Line {
 	

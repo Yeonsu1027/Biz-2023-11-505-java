@@ -2,7 +2,7 @@ package com.callor.score.exec;
 
 import com.callor.score.model.ScoreDto;
 import com.callor.score.service.NumberService;
-import com.callor.score.util.Line;
+import com.callor.score.utils.Line;
 
 public class ScoreB {
 	//키보드에서 3개의 점수를 입력받기

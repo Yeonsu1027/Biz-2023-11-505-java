@@ -2,7 +2,7 @@ package com.callor.score.service;
 
 import java.util.Scanner;
 
-import com.callor.score.util.Line;
+import com.callor.score.utils.Line;
 
 public class NumberService {
 
