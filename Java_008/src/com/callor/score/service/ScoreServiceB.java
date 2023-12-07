@@ -51,7 +51,7 @@ public class ScoreServiceB {
 			String line = scan.nextLine();
 			// System.out.println(line);
 
-			String[] lines = line.split(".");
+			String[] lines = line.split(",");
 			ScoreDto scoreDto = new ScoreDto();
 			try {
 				scoreDto.stdnum = lines[0];
