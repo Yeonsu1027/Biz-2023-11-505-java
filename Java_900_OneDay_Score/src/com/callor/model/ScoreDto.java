@@ -1,4 +1,4 @@
-package com.callor.score;
+package com.callor.model;
 
 import java.util.Scanner;
 
@@ -7,11 +7,11 @@ public class ScoreDto {
 	
 	
 	
-	int Kor;
-	int Eng;
-	int Math;
-	int Music;
-	int Art;
+	public int Kor;
+	public int Eng;
+	public int Math;
+	public int Music;
+	public int Art;
 	public int StdNum;
 	
 	private int total;

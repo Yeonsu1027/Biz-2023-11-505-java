@@ -1,4 +1,6 @@
-package com.callor.score;
+package com.callor.exec;
+
+import com.callor.service.Scoreservice;
 
 public class ScoreHan {
 	
@@ -7,7 +9,10 @@ public class ScoreHan {
 		Scoreservice scoreService = new Scoreservice();
 				
 	
-		scoreService.printScore();
+		scoreService.printScore(10);
+		
+		
+		
 			
 		
 //		//test

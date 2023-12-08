@@ -1,7 +1,10 @@
-package com.callor.score;
+package com.callor.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.callor.model.ScoreDto;
+import com.callor.utils.Line;
 
 public class Scoreservice {
 
@@ -15,9 +18,9 @@ public class Scoreservice {
 
 	}
 
-	public void printScore() {
+	public void printScore(int Std) {
 		//학생수
-		int Std = 10;
+		
 
 		// 각 점수합계, 총점의합계
 		int KorTotal = 0;
