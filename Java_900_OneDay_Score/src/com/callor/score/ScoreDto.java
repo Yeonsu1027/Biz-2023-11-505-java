@@ -12,7 +12,7 @@ public class ScoreDto {
 	int Math;
 	int Music;
 	int Art;
-	public String StdNum;
+	public int StdNum;
 	
 	private int total;
 	private float avg;

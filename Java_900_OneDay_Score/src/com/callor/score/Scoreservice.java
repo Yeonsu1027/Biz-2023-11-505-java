@@ -45,20 +45,31 @@ public class Scoreservice {
 		Line.sLine(100);
 
 		// ------------------------------------ 학번구하기
-		String strStdNum = "23000";
-		if (scores.size() > 0) {
-			strStdNum = scores.get(scores.size() - 1).StdNum;
-		}
-
-		int intStdNum = Integer.valueOf(strStdNum.substring(2));
-				
-		intStdNum++;
-		scoredto.StdNum = strStdNum;
-		
-		strStdNum = String.format("23%03d", intStdNum);
+//		String strStdNum = "23000";
+//		if (scores.size() > 0) {  
+//			
+//			strStdNum = scores.get(scores.size() - 1).StdNum;
+//		}
+//	
+//		int intStdNum = Integer.valueOf(strStdNum.substring(2));
+//				
+//		intStdNum++;
+//		scoredto.StdNum = strStdNum;
+//		
+//		strStdNum = String.format("23%03d", intStdNum);
 		// -------------------------------------
 
-		for (int i = 1; i < 10; i++) {
+		
+		
+		String strStdNum = "23000";
+		
+		for (int i = 0; i < Std; i++) {
+			
+			
+			//new 학번구하기
+			int intStdNum = Integer.valueOf(strStdNum.substring(2));
+			intStdNum++;
+			strStdNum = String.format("23%03d", intStdNum);
 			
 						
 			scoredto = new ScoreDto();
@@ -79,7 +90,7 @@ public class Scoreservice {
 			int Total = scoredto.getTotal();
 			float Avg = scoredto.getAvg();
 
-			System.out.printf("\t\t", strStdNum);
+			System.out.printf("%s\t\t", strStdNum);
 			System.out.printf("%d\t", ScoreKor);
 			System.out.printf("%d\t", ScoreEng);
 			System.out.printf("%d\t", ScoreMath);
@@ -104,9 +115,17 @@ public class Scoreservice {
 			ArtAvg = (float) ArtTotal / Std;
 
 			AvgAvg2 = (float) AvgAvg / Std;
+			
+			
+			
+			intStdNum++;
 
 			scores.add(scoredto);
 		} // end for
+		
+				
+		
+		
 
 		Line.sLine(100);
 
