@@ -1,4 +1,4 @@
-package com.callor.score.exec;
+package com.callor.score.exec.scores;
 
 import java.security.Provider.Service;
 import java.util.ArrayList;
