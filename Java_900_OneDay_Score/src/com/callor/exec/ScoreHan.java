@@ -1,12 +1,13 @@
 package com.callor.exec;
 
-import com.callor.service.Scoreservice;
+
+import com.callor.service.Scoreservice2;
 
 public class ScoreHan {
 	
 	public static void main(String[] args) {
 		
-		Scoreservice scoreService = new Scoreservice();
+		Scoreservice2 scoreService = new Scoreservice2();
 				
 	
 		scoreService.printScore(10);
