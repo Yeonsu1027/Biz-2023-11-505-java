@@ -76,7 +76,7 @@ public class StudentServiceV1 {
 			if (student.num.equals(stdNum)) {
 				System.out.println("학번중복, 다시입력하세요");
 				//return false;
-				continue; //다시가 아니고 이름으로 넘어 가짐..
+				continue; 
 			}
 		}
 		return false;
