@@ -10,6 +10,13 @@ public class StartServiceImplV2 extends StartServiceImplV1{
 		// 코드를 그대로 실행하겠다
 		super(); //super코드는 항상맨처음에
 		
+		// ImplV1 에서는 St...ServiceImplV1() 을 사용하여
+		// stService 를 초기화 하였다
+		// 하지만 여기에서는 ImplV2를 사용하고 싶다
+		// 그럴때는 다시 stService를 ImplV2 로 초기화를
+		// 하면 된다.
+		// stService = new StudentServiceImplV2(); 
+		
 	}
 	
 	@Override
@@ -63,14 +70,16 @@ public class StartServiceImplV2 extends StartServiceImplV1{
 		while(true) {
 			Integer selectMenu = this.selectMenu();
 			if(selectMenu == null)break;
-			else if (selectMenu == 1) {
-				System.out.println("학생정보입력");
-			}else if (selectMenu == 2 ) {
+			else if (selectMenu == MenuIndex.학생정보_입력.getIndex()) { //1이란뜻
+				//System.out.println("학생정보입력");
+				stService.inputStudents();
+			}else if (selectMenu ==  MenuIndex.학생정보_조회.getIndex()) {
 				System.out.println("학생정보조회");
-			}else if (selectMenu == 3) {
+			}else if (selectMenu ==  MenuIndex.학생정보_가져오기.getIndex()) {
 				System.out.println("학생정보가져오기");
-			}else if (selectMenu == 4) {
-				System.out.println("학생정보 출력");
+			}else if (selectMenu ==  MenuIndex.학생정보_출력.getIndex()) {
+				//System.out.println("학생정보 출력");
+				stService.printStudent();
 			}
 		}
 		System.out.println("업무종료~!!");
