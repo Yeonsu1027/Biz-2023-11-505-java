@@ -10,15 +10,16 @@ package com.callor.student.models;
  * 그리고 각 요소는 index 라는 값을 갖는다
  */
 
-public enum StIndex {
+//enum 일종의 배열index
+public enum StdIndex {
 	
 	학번(0), 이름(1), 학과(2), 학년(3), 전화번호(4), 주소(5);
 	
 	private int index;
-	StIndex(int index) {
+	StdIndex(int index) {
 		this.index = index;
 	}
-	public int getIndex() {
+	public int getIndex() { //()안의 숫자를 외부에서 볼 수 있게함
 		return index;
 	}
 
