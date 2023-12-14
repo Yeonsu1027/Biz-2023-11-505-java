@@ -38,6 +38,7 @@ public class inputB {
 		for(int i =0; i < size ; i++ ) {
 			System.out.println(printest.get(i));
 			
+			
 		}
 		
 		
