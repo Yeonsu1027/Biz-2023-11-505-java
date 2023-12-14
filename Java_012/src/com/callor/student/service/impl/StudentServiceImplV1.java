@@ -62,7 +62,7 @@ protected String newStdNum() {
 			stdNum = students.get(students.size()-1).num;
 			
 			// num 데이터의 맨 첫번째 한개 글자를 추출하기
-			// S0100 이라면 S 만 추출하기 s0100
+			// S0100 이라면 S 만 추출하기 
 			String frefix = stdNum.substring(0,1);
 			
 			// S0100 이라면 0100 만 추출하기
