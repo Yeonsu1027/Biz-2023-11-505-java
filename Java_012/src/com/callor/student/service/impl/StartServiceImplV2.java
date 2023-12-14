@@ -1,14 +1,16 @@
 package com.callor.student.service.impl;
 
 import com.callor.student.models.MenuIndex;
+import com.callor.student.service.StudentService;
 import com.callor.student.utis.Line;
 
 public class StartServiceImplV2 extends StartServiceImplV1{
-	public StartServiceImplV2() {
+	
+	public StartServiceImplV2(StudentService stService) {
 		// scan = new Scanner(System.in);
 		// V1 의 생성자를 호출하여 V1 생성자에 있는
 		// 코드를 그대로 실행하겠다
-		super(); //super코드는 항상맨처음에
+		super(stService); 
 		
 		// ImplV1 에서는 St...ServiceImplV1() 을 사용하여
 		// stService 를 초기화 하였다
@@ -76,14 +78,15 @@ public class StartServiceImplV2 extends StartServiceImplV1{
 			}else if (selectMenu ==  MenuIndex.학생정보_조회.getIndex()) {
 				System.out.println("학생정보조회");
 			}else if (selectMenu ==  MenuIndex.학생정보_가져오기.getIndex()) {
-				System.out.println("학생정보가져오기");
+				//System.out.println("학생정보가져오기");
+				stService.loadStudent();
 			}else if (selectMenu ==  MenuIndex.학생정보_출력.getIndex()) {
 				//System.out.println("학생정보 출력");
 				stService.printStudent();
 			}
 		}
 		System.out.println("업무종료~!!");
-	}
+	} // end startApp()
 	
 
 }

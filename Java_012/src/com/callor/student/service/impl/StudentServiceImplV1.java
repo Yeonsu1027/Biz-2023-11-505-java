@@ -1,5 +1,7 @@
 package com.callor.student.service.impl;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -40,6 +42,7 @@ public class StudentServiceImplV1 implements StudentService{
 	// 동일한 학번의 요소가 있으면 그 요소를 return
 	// 없으면 null 을 return
 	protected StudentDto selectStdNum(String num) { //리턴하는 std가 studenDto 타입이니까 method 타입도 동일
+		// TODO:학생정보 찾기
 		for(StudentDto std : students) {
 			if(std.num.equals(num)) { //입력받은 학번이 std의 num(학번)과 같으면 중복
 				return std;
@@ -51,8 +54,35 @@ public class StudentServiceImplV1 implements StudentService{
 	}
 	
 	
+protected String newStdNum() {
+		
+		String stdNum = "S0001";
+		if(!students.isEmpty()) { //데이터가있으면
+			// students 리스트의 가장 "마지막 요소"의 학번
+			stdNum = students.get(students.size()-1).num;
+			
+			// num 데이터의 맨 첫번째 한개 글자를 추출하기
+			// S0100 이라면 S 만 추출하기
+			String frefix = stdNum.substring(0,1);
+			
+			// S0100 이라면 0100 만 추출하기
+			stdNum = stdNum.substring(1);
+			
+			stdNum =String.format("%s%04d",frefix,Integer.valueOf(stdNum)+1);
+			
+		}
+		return stdNum;
+		
+	}
+	
+	
+	
+	
+	
+	
 	@Override
 	public boolean inputStudent() { // 이런 이름의 method가 반드시 필요하다
+		// TODO:한 학생의 정보 입력받기
 		
 		// 키보드로 학생의 개별 정보들(학번, 이름.. 등)을 입력받고
 		// 임시로 저장할 배열
@@ -61,15 +91,31 @@ public class StudentServiceImplV1 implements StudentService{
 		String[] inputStr = new String[StdIndex.values().length]; //Stdindex에 선언되어있는 6개의 요소 개수 0~5 "StdIndex.values() : 배열이란뜻" / .values 자체가 StdIndex의 배열이다.
 		for(StdIndex item : StdIndex.values()) {  //StdIndex의 요소를 item에 하나씩.. 학번..이름..학과.. 저장한다.
 			while(true) {
-				System.out.printf("%s 입력 (QUIT:종료)>> ",item);  //for반복문이라 item이 학번.. 이름.. 바뀌어가면서 뜬다.
+				
+				String newStdNum = this.newStdNum(); //새로운학번을 생성
+				
+				System.out.printf(" %s(%s) 입력 (QUIT:종료)>> \n",item,newStdNum ); 
 				String str = keyBD.nextLine(); //item이 학번이면 학번의 index값이 getIndex에 의해 0번 값이 온다. 그 배열값에 키보드로 입력한 값이 들어간다.
 				if(str.equals("QUIT")) return false; 
 				// 학번을 입력하는 경우 학번의 중복검사를 실시한다
-				if(item.toString().equals("학번")&& this.selectStdNum(str) != null) { //item이 학번이면, 방금입력한 학번을 보내서 이미 존재하는지 물어본다 //null이 아닐경우 중복이다
+				if(item.toString().equals("학번")) {  //학번인 경우에만 중복과, ~를사용함. 검사 나머지는 빈칸만 검사
+					
+					if(str.isBlank()) {
+						System.out.printf("**학번은 %s를 사용함 \n",newStdNum);
+					}
+					
+					
+					
+					if( this.selectStdNum(str) != null) { //item이 학번이면, 방금입력한 학번을 보내서 이미 존재하는지 물어본다 //null이 아닐경우 중복이다
+				
 					// item의 type(StdIndex)과 "학번의 type(문자) 가 다르므로 item을 문자로바꾸고 비교한다.  &&는 앞이참이어야 뒤에도검사
 					System.out.println("학번 중복");
 					continue; //for는 continue를 만나면 건너뛴다.. 이름으로 가버림
-				
+					}
+			} else if (str.isBlank()) {
+				System.out.println("값을 입력해주세요");
+				System.out.printf("%s 는 필수항목입니다\n",item);
+				continue;
 			}
 				inputStr[item.getIndex()] = str;
 				break;
@@ -93,6 +139,7 @@ public class StudentServiceImplV1 implements StudentService{
 
 	@Override
 	public void inputStudents() {
+		// TODO:여러학생의 정보받기
 //		while(true) {
 //			if(this.inputStudent()) {
 //				break;
@@ -110,12 +157,13 @@ public class StudentServiceImplV1 implements StudentService{
 
 	@Override
 	public void loadStudent() {
-		// TODO Auto-generated method stub
+		// TODO 학생정보 읽어오기
 		
 	}
 
 	@Override
 	public void printStudent() {
+		// TODO:학생정보 출력하기
 		
 		Line.dLine(100);
 		System.out.println("한울고교 학생정보");
@@ -132,6 +180,14 @@ public class StudentServiceImplV1 implements StudentService{
 			System.out.printf("%s\t\n",dto.addr);
 		}
 		Line.dLine(100);
+	}
+
+	@Override
+	public void saveStudent() {
+		
+		
+		
+		
 	}
 
 }

@@ -1,16 +1,18 @@
 package com.callor.student.exex;
 
 import com.callor.student.service.StartService;
+import com.callor.student.service.StudentService;
 import com.callor.student.service.impl.StartServiceImplV2;
+import com.callor.student.service.impl.StudentServiceImplV1;
 
 public class MainExA {
 
 	
 	public static void main(String[] args) {
-		StartService start = new StartServiceImplV2();
-		//start.mainMenu();
-		//Integer result = start.selectMenu();
-		//System.out.println(result);
+		String studentDataFile = "src/com/callor/student/data/student.txt";
+		StudentService stService = new StudentServiceImplV1();
+		StartService start = new StartServiceImplV2(stService);
+		
 		start.startApp();
 	}
 }
