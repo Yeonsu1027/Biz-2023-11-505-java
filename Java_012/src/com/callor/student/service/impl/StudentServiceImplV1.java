@@ -23,7 +23,7 @@ import com.callor.student.utis.Line;
  * "구현체" 클래스 라고한다.
  * 
  */
-public class StudentServiceImplV1 implements StudentService{
+public class StudentServiceImplV1 implements StudentService {
 
 	// 현재 ImplV1 클래스를 다른 클래스가 상속하였을때
 	// protected 로 선언된 변수는 같이 상속이 된다
@@ -62,7 +62,7 @@ protected String newStdNum() {
 			stdNum = students.get(students.size()-1).num;
 			
 			// num 데이터의 맨 첫번째 한개 글자를 추출하기
-			// S0100 이라면 S 만 추출하기
+			// S0100 이라면 S 만 추출하기 s0100
 			String frefix = stdNum.substring(0,1);
 			
 			// S0100 이라면 0100 만 추출하기

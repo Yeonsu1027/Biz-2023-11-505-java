@@ -45,7 +45,7 @@ public class StartServiceImplV2 extends StartServiceImplV1{
 			this.mainMenu();
 			System.out.print("업무선택 >> ");
 			String str = scan.nextLine();
-			if(str.equals("QUIT")) return null;
+			if(str.equals("QUIT")) return null; //Integer를 사용한이유 null을 return하기 위해서
 			
 			try {
 				selectMenu = Integer.valueOf(str);
