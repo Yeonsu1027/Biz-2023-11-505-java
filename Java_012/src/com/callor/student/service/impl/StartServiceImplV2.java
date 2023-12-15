@@ -52,6 +52,7 @@ public class StartServiceImplV2 extends StartServiceImplV1{
 			} catch (Exception e) {
 				System.out.println("업무선택은 정수값을 입력하세요");
 				continue;
+				
 			}
 			if(selectMenu < 1
 					|| selectMenu > MenuIndex.values().length) { //length =4현재
