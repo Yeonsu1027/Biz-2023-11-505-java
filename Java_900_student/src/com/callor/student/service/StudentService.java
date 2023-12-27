@@ -18,7 +18,7 @@ public class StudentService {
 
 	public StudentService() {
 		scan = new Scanner(System.in);
-		//stdDto = new StudentDto(); / 아래에서 새로만들어쓰니까 필요없음
+		//stdDto = new StudentDto(); / 아래에서 새로만들어쓰니까 dto생성자에 필요없음
 		stlist = new ArrayList<StudentDto>();
 	}
 

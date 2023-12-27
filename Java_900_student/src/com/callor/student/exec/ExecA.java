@@ -7,7 +7,7 @@ public class ExecA {
 		StudentService stuService = new StudentService();
 		
 		//stuService.inputname(); 
-		stuService.studentlist(); //리스트출력검사
+		stuService.studentlist(); 
 	}
 
 }
